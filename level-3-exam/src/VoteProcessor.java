@@ -2,25 +2,36 @@ import java.util.ArrayList;
 
 public class VoteProcessor {
 
-	public Object calculateElectionWinner(ArrayList<String> votes) {
+	public String calculateElectionWinner(ArrayList<String> votes) {
 		// TODO Auto-generated method stub
-		for (int i = 0; i < votes.size(); i++) {
-			String n = votes.get(i);
-			for(String num : votes) {
-				votes.indexOf(num);
-				if (votes.size()>num.length()) {
-					n = num;
+		int a = 0;
+		int b = 0;
+		
+			for (String num : votes) {
+		
+				if (num.toLowerCase().contains("edward snowden")) {
+					a++;
+				} else if (num.toLowerCase().contains("pope francis")) {
+					b++;
+				}
+
 			}
+			if (a == b) {
+				return "TIE";
+			}
+			else if (a>b) {
+				return "edward snowden";
+			}
+			else if (b>a) {
+				return "pope francis";
+			}
+			System.out.println("a" + a);
+			System.out.println("b" + b);
+
 			
 				
-			}
-			
-			return n;
-			
-			}
-		
-		
 		return null;
+}
 	}
 
-}
+
